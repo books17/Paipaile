@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>拍拍樂產生器</title>
+  <title>拍拍樂</title>
   <style>
     body {
       font-family: "Microsoft JhengHei", sans-serif;
@@ -43,7 +43,7 @@
   </style>
 </head>
 <body>
-  <h2>拍拍樂</h2>
+  <h2>輸入最多 5 個名稱</h2>
 
   <div class="inputs">
     <input list="names" placeholder="名稱1">
@@ -59,168 +59,167 @@
 
   <script>
     const cardsData = [
-{
-					name: "彩妝",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FuPeuAcEupNEe3FhcVhssH9Kspz3_600"
-				},
-				{
-					name: "藥品",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FmhAKbWNHoj9HBjIogQRHXYRjIcM_600"
-				},
-				{
-					name: "運動",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/Fiq6sU9m0uPff9U7IqtkslIBIYqm_600"
-				},
-				{
-					name: "農具",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/Fm3DdRXkKpUKKkMj3FXo1QThTRJi_600"
-				},
-				{
-					name: "書籍",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/Fn3zgKR2VWd90SkbqE4jXl-uDdDU_600"
-				},
-				{
-					name: "辦公",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FgN3FF7hrXLpv8Xl6CC9t7eDlFq5_600"
-				},
-				{
-					name: "護膚",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FswbsZZoPAM1Oa3dKR-1gB8qpIvU_600"
-				},
-				{
-					name: "文玩",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/Fr-JFVozRCokjz0xMuRdK15cYtS-_600"
-				},
-				{
-					name: "家居",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/Fp3aPz_764-zTzS2ob5_-MjxDwVG_600"
-				},
-				{
-					name: "食品",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/Fl-iJ4XFR15hs9yCv0rSRh0vF1ci_600"
-				},
-				{
-					name: "潮玩",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FheFo4j64HlVVumY4ILnMh3aVqsK_600"
-				},
-				{
-					name: "飲料",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FkTZK7V-g5LeSBBwndjsI1vh4txl_600"
-				},
-				{
-					name: "母嬰",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FkGhU4wkpukGTBPIVYj2y4tu7R-j_600"
-				},
-				{
-					name: "箱包",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FvC6BpD2tAV8wuh1T419dTXmlyRB_600"
-				},
-				{
-					name: "寵物",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/Fif8dgnD9Xg46RTM4iePyCXe3cz1_600"
-				},
-				{
-					name: "五金",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/Ft3Ex1ptlWZaUR8etjf828vhOJMP_600"
-				},
-				{
-					name: "戶外",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FmgdR7N4mpMsywrPhpXDlAX_aqpq_600"
-				},
-				{
-					name: "植物",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FvYIFM_3r0T-2wptU0Etqse_tqbC_600"
-				},
-				{
-					name: "數碼",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FjzflLJd8gUJSIW0iKpJIWCNGcdo_600"
-				},
-				{
-					name: "廚具",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FpAmcnpSL9dxaogFeHz6zsTK65NB_600"
-				},
-				{
-					name: "床品",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FhOjRt6FSqFVjUcM0gqdp9Zj0G1U_600"
-				},
-				{
-					name: "出行",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FscbFz_kZzBG0kTc0ghIggLWDQQX_600"
-				},
-				{
-					name: "燈具",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FirfAyZIoJ_Hgk0TtAByRggc2BeI_600"
-				},
-				{
-					name: "鞋履",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FhVSDW5v0DnL788p_5Eqr3iwC9OP_600"
-				},
-				{
-					name: "洗護",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FmygY9fhcc0xCHs1drVP7iVLRihI_600"
-				},
-				{
-					name: "節慶",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FjgCs2C0_X_qpfGG28GVXeSID71B_600"
-				},
-				{
-					name: "茶香",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/Flmby5QZ6p1ihAnFB0yz-SYmICu0_600"
-				},
-				{
-					name: "美發",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FvB_Dm4Bc3xSfop0cbBA1k-S5ket_600"
-				},
-				{
-					name: "餐具",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FjYkrE2f5Er-CksoNvkS44uRDc6D_600"
-				},
-				{
-					name: "配飾",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/Fvs76Y6zrnR60WVwcF5Qj85GKDbh_600"
-				},
-				{
-					name: "服飾",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FrAuINSy5BRLzXUxTE3IHI0R4Pck_600"
-				},
-				{
-					name: "樂器",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/Frj337hYFmGADVSAT9cr0yoLCJdq_600"
-				},
-				{
-					name: "家電",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/Ftw-eLo5sEAard7LkSzAfgzke3Dj_600"
-				},
-				{
-					name: "美酒",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FhHJW4d8Ijx01TeCDYOjpQt1F58L_600"
-				},
-				{
-					name: "建材",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FjTdEU6Osulo7XBLYnMIasOj-Bog_600"
-				},
-				{
-					name: "健康",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FqpVKOG9scsff6LFz_yPm3jYrk3f_600"
-				},
-				{
-					name: "家具",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/Fl8UHO_QkrDXEbKD30CxTvhBZUSn_600"
-				},
-				{
-					name: "生鮮",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FmFE3IhEGdLeFrxqhB2WfWcjWr-c_600"
-				},
-				{
-					name: "童裝",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/FmOZ70CbpUIppr5whU6O8zt1LcoP_600"
-				},
-				{
-					name: "廚電",
-					img: "https://img-haodanku-com.cdn.fudaiapp.com/Fkt9RB_rdCIvaiODWBkMwcoz1cyD_600"
-				}
-			];
-
+      {
+        name: "彩妝",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FuPeuAcEupNEe3FhcVhssH9Kspz3_600"
+      },
+      {
+        name: "藥品",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FmhAKbWNHoj9HBjIogQRHXYRjIcM_600"
+      },
+      {
+        name: "運動",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/Fiq6sU9m0uPff9U7IqtkslIBIYqm_600"
+      },
+      {
+        name: "農具",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/Fm3DdRXkKpUKKkMj3FXo1QThTRJi_600"
+      },
+      {
+        name: "書籍",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/Fn3zgKR2VWd90SkbqE4jXl-uDdDU_600"
+      },
+      {
+        name: "辦公",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FgN3FF7hrXLpv8Xl6CC9t7eDlFq5_600"
+      },
+      {
+        name: "護膚",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FswbsZZoPAM1Oa3dKR-1gB8qpIvU_600"
+      },
+      {
+        name: "文玩",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/Fr-JFVozRCokjz0xMuRdK15cYtS-_600"
+      },
+      {
+        name: "家居",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/Fp3aPz_764-zTzS2ob5_-MjxDwVG_600"
+      },
+      {
+        name: "食品",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/Fl-iJ4XFR15hs9yCv0rSRh0vF1ci_600"
+      },
+      {
+        name: "潮玩",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FheFo4j64HlVVumY4ILnMh3aVqsK_600"
+      },
+      {
+        name: "飲料",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FkTZK7V-g5LeSBBwndjsI1vh4txl_600"
+      },
+      {
+        name: "母嬰",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FkGhU4wkpukGTBPIVYj2y4tu7R-j_600"
+      },
+      {
+        name: "箱包",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FvC6BpD2tAV8wuh1T419dTXmlyRB_600"
+      },
+      {
+        name: "寵物",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/Fif8dgnD9Xg46RTM4iePyCXe3cz1_600"
+      },
+      {
+        name: "五金",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/Ft3Ex1ptlWZaUR8etjf828vhOJMP_600"
+      },
+      {
+        name: "戶外",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FmgdR7N4mpMsywrPhpXDlAX_aqpq_600"
+      },
+      {
+        name: "植物",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FvYIFM_3r0T-2wptU0Etqse_tqbC_600"
+      },
+      {
+        name: "數碼",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FjzflLJd8gUJSIW0iKpJIWCNGcdo_600"
+      },
+      {
+        name: "廚具",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FpAmcnpSL9dxaogFeHz6zsTK65NB_600"
+      },
+      {
+        name: "床品",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FhOjRt6FSqFVjUcM0gqdp9Zj0G1U_600"
+      },
+      {
+        name: "出行",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FscbFz_kZzBG0kTc0ghIggLWDQQX_600"
+      },
+      {
+        name: "燈具",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FirfAyZIoJ_Hgk0TtAByRggc2BeI_600"
+      },
+      {
+        name: "鞋履",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FhVSDW5v0DnL788p_5Eqr3iwC9OP_600"
+      },
+      {
+        name: "洗護",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FmygY9fhcc0xCHs1drVP7iVLRihI_600"
+      },
+      {
+        name: "節慶",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FjgCs2C0_X_qpfGG28GVXeSID71B_600"
+      },
+      {
+        name: "茶香",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/Flmby5QZ6p1ihAnFB0yz-SYmICu0_600"
+      },
+      {
+        name: "美發",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FvB_Dm4Bc3xSfop0cbBA1k-S5ket_600"
+      },
+      {
+        name: "餐具",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FjYkrE2f5Er-CksoNvkS44uRDc6D_600"
+      },
+      {
+        name: "配飾",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/Fvs76Y6zrnR60WVwcF5Qj85GKDbh_600"
+      },
+      {
+        name: "服飾",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FrAuINSy5BRLzXUxTE3IHI0R4Pck_600"
+      },
+      {
+        name: "樂器",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/Frj337hYFmGADVSAT9cr0yoLCJdq_600"
+      },
+      {
+        name: "家電",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/Ftw-eLo5sEAard7LkSzAfgzke3Dj_600"
+      },
+      {
+        name: "美酒",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FhHJW4d8Ijx01TeCDYOjpQt1F58L_600"
+      },
+      {
+        name: "建材",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FjTdEU6Osulo7XBLYnMIasOj-Bog_600"
+      },
+      {
+        name: "健康",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FqpVKOG9scsff6LFz_yPm3jYrk3f_600"
+      },
+      {
+        name: "家具",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/Fl8UHO_QkrDXEbKD30CxTvhBZUSn_600"
+      },
+      {
+        name: "生鮮",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FmFE3IhEGdLeFrxqhB2WfWcjWr-c_600"
+      },
+      {
+        name: "童裝",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/FmOZ70CbpUIppr5whU6O8zt1LcoP_600"
+      },
+      {
+        name: "廚電",
+        img: "https://img-haodanku-com.cdn.fudaiapp.com/Fkt9RB_rdCIvaiODWBkMwcoz1cyD_600"
+      }
+    ];
 
     // 填入 datalist 選項
     const datalist = document.getElementById("names");
@@ -257,12 +256,22 @@
       });
     }
 
-    // 綁定 input 事件
+    // 綁定 input 和 click 事件
     document.querySelectorAll(".inputs input").forEach(input => {
       input.addEventListener("input", updateImages);
+      input.addEventListener("click", function(event) {
+        // 防止點擊事件過快導致下拉選單未顯示
+        event.preventDefault();
+        this.value = ""; // 清空輸入值
+        this.focus(); // 確保輸入框聚焦
+        // 模擬輸入以觸發下拉選單
+        this.dispatchEvent(new Event("input"));
+        // 嘗試強制顯示下拉選單（適用於支持 showPicker 的瀏覽器，如 Chrome）
+        if (typeof this.showPicker === "function") {
+          this.showPicker();
+        }
+      });
     });
   </script>
 </body>
 </html>
-
-
